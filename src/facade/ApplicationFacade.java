@@ -19,6 +19,9 @@ public class ApplicationFacade {
 		ExpressionParserProxy ep = new ExpressionParserProxy();
 		return ep.toExpression(l.toTokenSequence(input));
 	}
+/**
+ * Evaluates the input expression  
+ */
 	public Integer evaluate(String input) throws CalculationException, ParserException {
 		return this.checkSyntax(input).evaluate();
 	}
