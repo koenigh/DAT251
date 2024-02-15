@@ -11,6 +11,9 @@ import parser.ExpressionParserProxy;
  * Facade class only contains relevant services for clients
  */
 public class ApplicationFacade {
+/**
+ * Checks Syntax of input by either returning a valid syntax tree or an exception
+ */
 	public Expression checkSyntax(String input) throws ParserException {
 		Lexer l = new LexerImpl();
 		ExpressionParserProxy ep = new ExpressionParserProxy();
