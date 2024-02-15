@@ -1,6 +1,6 @@
 package basic;
 /**
- * Static bucket for texts 
+ * Static bucket for text constants 
  */
 public class TextConstants {
 	public static final String SPACE = " ";
