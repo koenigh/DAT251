@@ -1,8 +1,7 @@
 package lexer.stateSelection;
 
-import lexer.lexerStates.Lexer;
 import lexer.lexerStates.LexerState;
-import lexer.main.LexerImpl;
+import lexer.lexerStates.LexerStateAccess;
 
 abstract class StateSelectionLink implements StateSelector{
 	private StateSelector successor;
@@ -10,14 +9,14 @@ abstract class StateSelectionLink implements StateSelector{
 		this.successor = successor;
 	}
 	public abstract boolean myCondition(Character c);
-	public abstract LexerState myState(Lexer scanner);
+	public abstract LexerState myState(LexerStateAccess lexer);
 
 /**	
  * Chain delegation template
  */
-	public LexerState selectStateFor(Character c, Lexer scanner) {
-		if(myCondition(c)) 	return myState(scanner);
-		else				return this.getSuccessor().selectStateFor(c, scanner); 
+	public LexerState selectStateFor(Character c, LexerStateAccess lexer) {
+		if(myCondition(c)) 	return myState(lexer);
+		else				return this.getSuccessor().selectStateFor(c, lexer); 
 	}
 	public StateSelector getSuccessor() {
 		return this.successor;

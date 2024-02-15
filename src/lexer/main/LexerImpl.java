@@ -3,11 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import basic.TextConstants;
-import lexer.lexerStates.Lexer;
+import lexer.lexerStates.LexerFacade;
 import lexer.lexerStates.LexerState;
+import lexer.lexerStates.LexerStateAccess;
 import lexer.lexerStates.SelectionState;
 import tokens.Token;
-public class LexerImpl implements Lexer {
+public class LexerImpl implements LexerFacade, LexerStateAccess {
 	private LexerState state;			// State Pattern
 	private String currentExpression;	// Input 	(reduced during scanning)
 	private List<Token> currentResult;	// Output 	(grows during scanning) 

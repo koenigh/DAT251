@@ -3,7 +3,7 @@ package lexer.lexerStates;
  * Processing Whitespace
  */
 public class WhitespaceState extends LexerState{
-	public WhitespaceState(Lexer myLexer) {
+	public WhitespaceState(LexerStateAccess myLexer) {
 		super(myLexer);
 	}
 	public void scan(Character c) {

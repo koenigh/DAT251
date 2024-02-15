@@ -4,7 +4,7 @@ import tokens.ErrorToken;
  * Produces an error token, if unknown characters are detected
  */
 public class ErrorState extends LexerState {
-	public ErrorState(Lexer myLexer) {
+	public ErrorState(LexerStateAccess myLexer) {
 		super(myLexer);
 	}
 	public void scan(Character c) {

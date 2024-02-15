@@ -5,7 +5,7 @@ import tokens.NaturalNumberToken;
  */
 public class DigitState extends LexerState {
     private Integer collectedDigits;
-	public DigitState(Lexer myLexer){
+	public DigitState(LexerStateAccess myLexer){
 		super(myLexer);
 		this.collectedDigits = 0;
 	}

@@ -1,11 +1,12 @@
 package lexer.lexerStates;
 /** 
  * Lexer state pattern
- * Each state knows the lexer, whose state it is, by an attribute, i.e. a permanent reference
+ * Each state knows the part of the lexer, whose state it is, by an attribute, 
+ * It is only necessary to access the state relevant methods
  */
 public abstract class LexerState {
-	private Lexer myLexer;
-	public LexerState(Lexer myLexer) {
+	private LexerStateAccess myLexer;
+	public LexerState(LexerStateAccess myLexer) {
 		super();
 		this.myLexer = myLexer;
 	}
@@ -27,7 +28,7 @@ public abstract class LexerState {
 	protected void endOfProcessing(){
 		this.getMyLexer().setState(new SelectionState(this.getMyLexer()));
 	}
-	protected Lexer getMyLexer(){
+	protected LexerStateAccess getMyLexer(){
 		return this.myLexer;
 	}
 }

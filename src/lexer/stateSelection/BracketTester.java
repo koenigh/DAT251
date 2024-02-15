@@ -2,8 +2,8 @@ package lexer.stateSelection;
 
 import basic.TextConstants;
 import lexer.lexerStates.BracketState;
-import lexer.lexerStates.Lexer;
 import lexer.lexerStates.LexerState;
+import lexer.lexerStates.LexerStateAccess;
 import lexer.main.LexerImpl;
 
 class BracketTester extends StateSelectionLink {
@@ -11,6 +11,6 @@ class BracketTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return TextConstants.isBracket(c);}
-	public LexerState myState(Lexer lexer) {return new BracketState(lexer);}
+	public LexerState myState(LexerStateAccess lexer) {return new BracketState(lexer);}
 }
 

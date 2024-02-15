@@ -4,7 +4,7 @@ import tokens.SymbolTable;
  * Processing Operators
  */
 public class OperatorState extends LexerState { 
-	public OperatorState(Lexer myLexer) {
+	public OperatorState(LexerStateAccess myLexer) {
 		super(myLexer);
 	}
 	public void scan(Character c) {

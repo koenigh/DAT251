@@ -1,7 +1,7 @@
 package lexer.stateSelection;
 
-import lexer.lexerStates.Lexer;
 import lexer.lexerStates.LexerState;
+import lexer.lexerStates.LexerStateAccess;
 import lexer.lexerStates.OperatorState;
 import lexer.main.LexerImpl;
 import tokens.SymbolTable;
@@ -11,5 +11,5 @@ class OperatorTester extends StateSelectionLink {
 		super(successor);
 	}
 	public boolean myCondition(Character c) {return SymbolTable.getInstance().exists(c);}
-	public LexerState myState(Lexer scanner) 	{return new OperatorState(scanner);}
+	public LexerState myState(LexerStateAccess lexer) 	{return new OperatorState(lexer);}
 }

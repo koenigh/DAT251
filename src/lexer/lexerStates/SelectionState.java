@@ -6,12 +6,12 @@ import lexer.stateSelection.StateSelectionGateway;
  */
 public class SelectionState extends LexerState {
 	private StateSelectionGateway stateSelector;
-	public SelectionState(Lexer myLexer) {
+	public SelectionState(LexerStateAccess myLexer) {
 		super(myLexer);
 		this.stateSelector = new StateSelectionGateway(); 
 	}
 	public void scan(Character c) {
-		Lexer s = this.getMyLexer();
+		LexerStateAccess s = this.getMyLexer();
 		// Delegate state selection to a responsibility chain 
 		s.setState(this.stateSelector.selectStateFor(c,s));  
 	}

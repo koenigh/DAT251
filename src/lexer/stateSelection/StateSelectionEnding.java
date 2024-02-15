@@ -1,14 +1,13 @@
 package lexer.stateSelection;
 
 import lexer.lexerStates.ErrorState;
-import lexer.lexerStates.Lexer;
 import lexer.lexerStates.LexerState;
-import lexer.main.LexerImpl;
+import lexer.lexerStates.LexerStateAccess;
 /**
  * Chain Ending!
  */
 class StateSelectionEnding implements StateSelector {
-	public LexerState selectStateFor(Character c, Lexer scanner) {
-		return new ErrorState(scanner);
+	public LexerState selectStateFor(Character c, LexerStateAccess lexer) {
+		return new ErrorState(lexer);
 	}
 }
