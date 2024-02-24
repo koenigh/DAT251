@@ -1,5 +1,5 @@
 package lexer.lexerStates;
-import tokens.SymbolTable;
+import tokens.TokenTable;
 /**
  * Processing Operators
  */
@@ -16,6 +16,6 @@ public class OperatorState extends LexerState {
 		return;
 	}	
 	private void addSymbol(Character c){
-		this.getMyLexer().addToken(SymbolTable.getInstance().get(c));
+		this.getMyLexer().addToken(TokenTable.getInstance().get(c));
 	}
 }

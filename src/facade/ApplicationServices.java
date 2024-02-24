@@ -10,7 +10,7 @@ import parser.ExpressionParserProxy;
 /**
  * Facade class only contains relevant services for clients
  */
-public class ApplicationFacade {
+public class ApplicationServices {
 /**
  * Checks Syntax of input by either returning a valid syntax tree or an exception
  */
