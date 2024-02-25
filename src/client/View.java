@@ -5,13 +5,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import java.awt.Font;
+
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JTree;
 import javax.swing.JScrollPane;
 /**
  * Von Window Builder generierte Klasse 
  */
 public class View extends JFrame {
+	private static final int textSize = 16;
 	private JPanel contentPane;
 	private JTextField textField_Input;
 	private JTextField textField_Value;
@@ -44,6 +49,7 @@ public class View extends JFrame {
 		if(this.btnEvaluateButton==null) {
 			this.btnEvaluateButton = new JButton("Evaluate");
 			this.btnEvaluateButton.setBounds(5, 91, 288, 35);
+			this.changeFontSize(this.btnEvaluateButton, textSize);
 			this.btnEvaluateButton.setToolTipText("You evaluate an expression here!");
 		}
 		return this.btnEvaluateButton;
@@ -52,6 +58,7 @@ public class View extends JFrame {
 		if(this.btnPruefeSyntax == null) {
 			this.btnPruefeSyntax = new JButton("Check Syntax");
 			btnPruefeSyntax.setBounds(5, 45, 288, 35);
+			this.changeFontSize(this.btnPruefeSyntax, textSize);
 			contentPane.add(btnPruefeSyntax);
 		}
 		return this.btnPruefeSyntax;
@@ -74,6 +81,11 @@ public class View extends JFrame {
 		this.btnEvaluateButton.setEnabled(enabled);
 	}
 // ===================== Private UI Elements ===============================	
+	private void changeFontSize(JComponent jc, int size) {
+		Font f = jc.getFont();
+		jc.setFont(new Font(f.getName(), f.getStyle(), size));
+		
+	}
 	private JPanel getTheContentPane() {
 		if(this.contentPane==null) {
 			this.contentPane = new JPanel();
@@ -83,10 +95,12 @@ public class View extends JFrame {
 			
 			JLabel lblAusdruck = new JLabel("Expression");
 			lblAusdruck.setBounds(5, 5, 414, 26);
+			this.changeFontSize(lblAusdruck, textSize);
 			this.contentPane.add(lblAusdruck); 
 
 			JLabel lblWert = new JLabel("Value");
 			lblWert.setBounds(18, 134, 92, 26);
+			this.changeFontSize(lblWert, textSize);
 			this.contentPane.add(lblWert);			
 		}
 		return this.contentPane;
@@ -97,6 +111,7 @@ public class View extends JFrame {
 			this.textField_Input = new JTextField();
 			this.textField_Input.setBounds(131, 2, 288, 32);
 			this.textField_Input.setColumns(10);
+			this.changeFontSize(this.textField_Input, textSize);
 			this.textField_Input.setToolTipText("Enter your expression here!");
 		}
 		return this.textField_Input;
@@ -108,6 +123,7 @@ public class View extends JFrame {
 			this.textField_Value.setEditable(false);
 			this.textField_Value.setBounds(131, 131, 286, 32);
 			this.textField_Value.setColumns(10);
+			this.changeFontSize(this.textField_Value, textSize);
 		}
 		return this.textField_Value;
 	}
@@ -118,6 +134,7 @@ public class View extends JFrame {
 			this.textField_Message.setEditable(false);
 			this.textField_Message.setBounds(5, 176, 414, 32);
 			this.textField_Message.setColumns(10);
+			this.changeFontSize(this.textField_Message, textSize);
 		}
 		return this.textField_Message;
 	}
@@ -132,6 +149,7 @@ public class View extends JFrame {
 	public JTree getTreeDisplay() {
 		if (this.treeDisplay==null) {
 			this.treeDisplay = new JTree();
+			this.changeFontSize(this.treeDisplay, textSize);
 		}
 		return this.treeDisplay;
 	}
