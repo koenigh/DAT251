@@ -3,7 +3,7 @@ package facade;
 import exceptions.CalculationException;
 import exceptions.ParserException;
 import expressions.Expression;
-import lexer.lexerStates.LexerFacade;
+import lexer.main.LexerFacade;
 import lexer.main.LexerImpl;
 import parser.ExpressionParser;
 import parser.ExpressionParserProxy;

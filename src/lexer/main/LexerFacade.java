@@ -1,4 +1,4 @@
-package lexer.lexerStates;
+package lexer.main;
 
 import java.util.List;
 

@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import basic.TextConstants;
-import lexer.lexerStates.LexerFacade;
 import lexer.lexerStates.LexerState;
 import lexer.lexerStates.LexerStateAccess;
 import lexer.lexerStates.SelectionState;
