@@ -55,9 +55,9 @@ public class TreeModelCreator implements ExpressionVisitor{
 		this.cursor.add(arg2);
 		
 		this.cursor = arg1;
-		// Todo: Create the tree under the first argument
-		this.cursor = arg2; 
-		// Todo: Create the tree under the second argument
+		bt.getArg1().accept(this);
+		this.cursor = arg2;
+		bt.getArg2().accept(this); 
 	}
 	public void handle(NaturalNumber n) {
 		this.cursor.setUserObject(n);

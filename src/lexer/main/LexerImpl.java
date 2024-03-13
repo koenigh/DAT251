@@ -35,3 +35,12 @@ public class LexerImpl implements LexerFacade, LexerStateAccess {
 		this.state = newState;
 	}
 }
+
+
+
+
+
+
+
+
+

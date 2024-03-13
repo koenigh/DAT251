@@ -30,9 +30,8 @@ public class Controller{
 		return this.view;
 	}
 	private void registerListeners() {
-		// Todo 1
-		// Todo 2
-		// Additional question in Ex. 3b) 
+		this.getView().getBtnCheckSyntaxButton().addActionListener((e)->onCheckSyntaxButtonPressed()); 
+		this.getView().getBtnEvaluateButton().addActionListener((e)->onEvaluationButtonPressed(e));
 		this.view.getTextField_Input().addKeyListener(new KeyListener() {
 			public void keyTyped(KeyEvent e) {
 				// Nothing
